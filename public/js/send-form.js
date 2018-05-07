@@ -7,6 +7,9 @@ function sendForm(e) {
     if (form.checkValidity()) { 
         e.preventDefault();
         fetch('form', {
+            headers: {
+                'Content-type': 'application/json'
+            },
             method: 'POST',
             body: JSON.stringify({
                 name: document.querySelector('.sample-form input[name=name]').value,
